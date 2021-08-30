@@ -25,3 +25,5 @@ STYLE GUIDE
 ### Font-Weights: 500, 700, 900
 
 ================================================ */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
