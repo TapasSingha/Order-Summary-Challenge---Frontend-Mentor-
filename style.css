@@ -25,5 +25,150 @@ STYLE GUIDE
 ### Font-Weights: 500, 700, 900
 
 ================================================ */
-.attribution { font-size: 11px; text-align: center; }
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+display=swap');
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top:2rem;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+@media screen and (min-width:800px){
+    body{
+        min-height:100vh;
+        background-image:url(images/pattern-background-desktop.svg);
+        background-repeat: no-repeat;
+        background-size:100%;
+    }
+}
+/*=====================COMMON CSS====================*/
+:root{
+    --pale-blue:#e0e8ff;
+    --bright-blue:#3829e0;
+    --very-pale-blue:#f5f7ff;
+    --desaturated-blue:#7280a7;
+    --dark-blue:#1f2f56;
+}
+html{
+    margin:0;
+    padding:0;
+    background-color:var(--very-pale-blue);
+    background-color:var(--bright-blue);
+    background-color:var(--desaturated-blue);
+    background-color:var(--dark-blue);
+    background-color:var(--pale-blue);
+    text-align:center;
+    font-family:'Red Hat Display', Arial, Helvetica, sans-serif;
+    font-weight:500;
+    font-size:16px;
+}
+img{
+    max-width:100%;
+}
+
+/*===================SPEFICIC CSS=====================*/
+.wrapper > *{
+    margin:1.6rem;
+    margin-top: 0;
+    margin-bottom:1.6rem;
+}
+body{
+    min-width:375px;
+}
+.wrapper{
+    max-width:311px;
+    min-height:565px;
+    margin:0 auto;
+    background-color:white;
+    border-radius:1rem;
+}
+
+.top-poster{
+    max-height:31.37%;
+    width:100%;
+    margin:0;
+}
+
+.top-poster img{
+    border-top-left-radius:1rem;
+    border-top-right-radius:1rem;
+}
+
+.order-text{
+    color:var(--desaturated-blue);
+}
+.order-text h1{
+    font-size:1.45rem;
+    color:var(--dark-blue);
+    font-weight:700;
+}
+.order-text p{
+    line-height:1.75;
+}
+
+.plan-info{
+    height:4rem;
+    display:flex;
+    flex-direction:row;
+    background-color:#f8f9fe;
+    border-radius:1rem;
+    justify-content:space-around;
+    align-items:center;
+}
+.plan-pic{
+    width:3rem;
+    height:3rem;
+    border-radius:50%;
+    background-color: var(--pale-blue);/*#d6e1ff*/
+}
+.plan-name-n-price .bold{
+    font-weight:600;
+}
+.plan-name-n-price p{
+    text-align:left;
+}
+#change{
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--dark-blue);
+}
+#change a:visited{
+    color:#6254cb;
+}
+
+.payment-order{
+    height:3rem;
+    display:flex;
+    flex-direction:column;
+    margin-bottom:1rem;    
+}
+
+.payment-order input{
+    width:100%;
+    height:3rem;
+    font-size:1.1rem;
+    font-weight:700;
+    margin-bottom:1rem;
+    border:none;    
+}
+.payment-order input:first-of-type{
+    background-color:#382ae1;
+    border-radius:0.4rem;
+    color:white;
+    /*box-shadow: ;*/
+}
+.payment-order input:last-of-type{
+    margin-bottom:initial;
+    color:grey;
+    background-color:initial;
+}
+
