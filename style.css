@@ -143,22 +143,46 @@ SPEFICIC CSS
 }
 
 .plan-info{
-    height:4rem;
-    display:flex;
-    flex-direction:row;
+    min-height:5rem;
     background-color:#f8f9fe;
     border-radius:1rem;
+
+    /*display:flex;
+    flex-direction:row;
+    
+    
     justify-content:space-around;
-    align-items:center;
+    align-items:center;*/
+
+    display:grid;
+    grid-template-columns:72px 1fr 80px;
+    
+    grid-template-areas: 
+    "plan-pic plan-name-n-price change";
+    place-content:center;
+    place-items:center;
+
+    /*Instruction: Fix the grid*/
+    /*min-width:100%;*/
+}
+.plan-info > *{
 }
 .plan-pic{
     width:3rem;
     height:3rem;
     border-radius:50%;
     background-color: var(--pale-blue);/*#d6e1ff*/
+    grid-column: plan-pic;
+    place-self:center;
+}
+.plan-name-n-price{
+    grid-column: plan-name-n-price;
+    justify-self:left;
+    color:var(--desaturated-blue);   
 }
 .plan-name-n-price .bold{
     font-weight:600;
+    color:#28314a;
 }
 .plan-name-n-price p{
     text-align:left;
@@ -167,6 +191,10 @@ SPEFICIC CSS
     font-weight:700;
     font-size:0.85rem;
     color:var(--dark-blue);
+    grid-column:change;
+}
+#change a:hover, #change a:focus{
+    text-decoration:none;
 }
 #change a:visited{
     color:#6254cb;
