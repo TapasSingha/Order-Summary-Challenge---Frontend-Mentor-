@@ -27,6 +27,7 @@ STYLE GUIDE
 ================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+display=swap');
 
+/*=====================COMMON CSS====================*/
 
 .attribution { 
     font-size: 11px; 
@@ -34,13 +35,47 @@ STYLE GUIDE
     margin-top:2rem;
 }
 .attribution a { color: hsl(228, 45%, 44%); }
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --pale-blue:#e0e8ff;
+    --bright-blue:#3829e0;
+    --very-pale-blue:#f5f7ff;
+    --desaturated-blue:#7280a7;
+    --dark-blue:#1f2f56;
+}
+html{
+    background-color:var(--pale-blue);
+    /*To flood or cover the whole viewport without specifying any height to the body element, assign background-color to html element. 
+    Assigning background-color to body will only cover the viewport equivalent to the body height 
+    
+    Link: https://css-tricks.com/just-one-of-those-weird-things-about-css-background-on-body/
+    */
+    
+    font-size:16px;
+    /*Always specify font-size at the html element, rather than body element*/
+}
 body{
     min-height:100vh;
+    /*Specify min-height of 100vh to body. Do not use 100%. Do not assign it to html.*/
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     margin:0;
+    text-align:center;
+    font-family:'Red Hat Display', Arial, Helvetica, sans-serif;
+    font-weight:500;
+    /*Specify margin, background, and text properties to the body element rather than the HTML element
+    
+    Difference between html and body element and when to use which
+    Link: https://css-tricks.com/html-vs-body-in-css/
+
+    As referenced from Claus Gregerson's comment from this page- assigning background-color to the html allows the background-color to render before other stuff loads. It is a good thing 
+    */
 }
 @media screen and (min-width:800px){
     body{
@@ -50,48 +85,40 @@ body{
         background-size:100%;
     }
 }
-/*=====================COMMON CSS====================*/
-:root{
-    --pale-blue:#e0e8ff;
-    --bright-blue:#3829e0;
-    --very-pale-blue:#f5f7ff;
-    --desaturated-blue:#7280a7;
-    --dark-blue:#1f2f56;
-}
-html{
-    margin:0;
-    padding:0;
-    background-color:var(--very-pale-blue);
-    background-color:var(--bright-blue);
-    background-color:var(--desaturated-blue);
-    background-color:var(--dark-blue);
-    background-color:var(--pale-blue);
-    text-align:center;
-    font-family:'Red Hat Display', Arial, Helvetica, sans-serif;
-    font-weight:500;
-    font-size:16px;
-}
 img{
     max-width:100%;
 }
 
-/*===================SPEFICIC CSS=====================*/
-.wrapper > *{
-    margin:1.6rem;
-    margin-top: 0;
-    margin-bottom:1.6rem;
-}
-body{
-    min-width:375px;
-}
-.wrapper{
+
+
+/*============================================================================
+SPEFICIC CSS
+==============================================================================*/
+/*=================TOP SECTION===============*/
+
+.order-summary-card{
     max-width:311px;
-    min-height:565px;
+    min-height:570px;
     margin:0 auto;
     background-color:white;
     border-radius:1rem;
 }
 
+.order-summary-card > *{
+    margin:1.6rem;
+    /*margin-top: 2rem;
+    margin-bottom:1.6rem;*/
+}
+.order-text p{
+    margin:1.1rem 0 1.6rem 0;
+}
+/*Did till now*/
+
+.plan-info{
+    min-height:80px;
+    margin-top:0;
+    margin-bottom:0;
+}
 .top-poster{
     max-height:31.37%;
     width:100%;
@@ -102,7 +129,7 @@ body{
     border-top-left-radius:1rem;
     border-top-right-radius:1rem;
 }
-
+/*=================MIDDLE SECTION===============*/
 .order-text{
     color:var(--desaturated-blue);
 }
@@ -145,6 +172,8 @@ body{
     color:#6254cb;
 }
 
+/*=================BOTTOM SECTION===============*/
+
 .payment-order{
     height:3rem;
     display:flex;
@@ -157,7 +186,6 @@ body{
     height:3rem;
     font-size:1.1rem;
     font-weight:700;
-    margin-bottom:1rem;
     border:none;    
 }
 .payment-order input:first-of-type{
@@ -165,6 +193,8 @@ body{
     border-radius:0.4rem;
     color:white;
     /*box-shadow: ;*/
+    margin-bottom:0.7rem;
+
 }
 .payment-order input:last-of-type{
     margin-bottom:initial;
