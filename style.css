@@ -123,6 +123,9 @@ Frontend width and height 280W/438H
     background-color: var(--pale-blue);/*#d6e1ff*/
     grid-column: plan-pic;
     place-self:center;
+    display:flex;
+    place-content:center;
+    place-items:center;
 }
 .plan-name-n-price{
     grid-column: plan-name-n-price;
