@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+display=swap');
+
 /*=====================COMMON CSS====================*/
+
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -19,56 +21,60 @@
     --dark-blue:#1f2f56;
 }
 html{
-    background-color:var(--pale-blue);  
+    background-color:var(--pale-blue);
+    /*To flood or cover the whole viewport without specifying any height to the body element, assign background-color to html element. 
+    Assigning background-color to body will only cover the viewport equivalent to the body height 
+    
+    Link: https://css-tricks.com/just-one-of-those-weird-things-about-css-background-on-body/
+    */
+    
     font-size:16px;
+    /*Always specify font-size at the html element, rather than body element*/
 }
-
 body{
     min-height:100vh;
+    /*Specify min-height of 100vh to body. Do not use 100%. Do not assign it to html.*/
     display:flex;
     flex-direction:column;
-    place-content:center;
-    place-items:center;
-    
-    /*margin:0; seems to have no effect*/
+    align-items:center;
+    margin:0;
     text-align:center;
     font-family:'Red Hat Display', Arial, Helvetica, sans-serif;
     font-weight:500;
-    background-image:url(images/pattern-background-desktop.svg);
-    background-repeat: no-repeat;
-    background-size:100%;
+    /*Specify margin, background, and text properties to the body element rather than the HTML element
+    
+    Difference between html and body element and when to use which
+    Link: https://css-tricks.com/html-vs-body-in-css/
+    As referenced from Claus Gregerson's comment from this page- assigning background-color to the html allows the background-color to render before other stuff loads. It is a good thing 
+    */
+    position:relative;
+}
+@media screen and (min-width:800px){
+    body{
+        min-height:100vh;
+        background-image:url(images/pattern-background-desktop.svg);
+        background-repeat: no-repeat;
+        background-size:100%;
+    }
 }
 img{
     max-width:100%;
 }
+
 /*============================================================================
 SPEFICIC CSS
 ==============================================================================*/
 /*=================TOP SECTION===============*/
-/* 
-Current width and height: 197W/357H
-Frontend width and height 280W/438H
-*/
+
 .order-summary-card{
-    max-width:19.43rem; /*311px*/
-    min-height:35.625rem; /*570px*/
+    max-width:311px;
+    min-height:570px;
     margin:0 auto;
     background-color:white;
     border-radius:1rem;
+    position:absolute;
+    top:10vh;
 }
-@media screen and (min-width:800px){
-    html{
-        background-color:var(--pale-blue);  
-        font-size:23px;
-    }
-    /*.order-summary-card{
-        max-width:448px; 
-        min-height:700px; 
-    }*/
-
-}
-/*================================WORK HERE=========================*/
-
 .order-summary-card > *{
     margin:1.6rem;
     /*margin-top: 2rem;
@@ -107,15 +113,18 @@ Frontend width and height 280W/438H
     min-height:5rem;
     background-color:#f8f9fe;
     border-radius:1rem;
+
     display:grid;
-    grid-template-columns:4.5rem 1fr 5rem;/*72px 1fr 80px;*/
+    grid-template-columns:72px 1fr 80px;
     grid-template-areas: 
     "plan-pic plan-name-n-price change";
     place-content:center;
     place-items:center;
+
     /*Instruction: Fix the grid*/
     /*min-width:100%;*/
 }
+
 .plan-pic{
     width:3rem;
     height:3rem;
@@ -123,9 +132,6 @@ Frontend width and height 280W/438H
     background-color: var(--pale-blue);/*#d6e1ff*/
     grid-column: plan-pic;
     place-self:center;
-    display:flex;
-    place-content:center;
-    place-items:center;
 }
 .plan-name-n-price{
     grid-column: plan-name-n-price;
@@ -152,6 +158,7 @@ Frontend width and height 280W/438H
     text-decoration:none;
     color:#766cf1;
 }
+
 /*=================BOTTOM SECTION===============*/
 .payment-order{
     height:3rem;
@@ -171,7 +178,7 @@ Frontend width and height 280W/438H
 }
 .payment-order input:first-of-type{
     background-color:#382ae1;
-    box-shadow:0rem 1.25rem 1.25rem #dcd6fc; /*0px20px 20px #dcd6fc;*/
+    box-shadow:0px 20px 20px #dcd6fc;
     border-radius:0.8rem;
     color:white;
     margin-bottom:0.7rem;
@@ -190,3 +197,4 @@ Frontend width and height 280W/438H
     color:var(--dark-blue);
 }
 
+/*590*144px*/
